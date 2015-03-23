@@ -31,3 +31,5 @@ WORKDIR /usr/src/ffmpeg
 RUN ct-ng-env ./configure --enable-cross-compile --cross-prefix='/opt/x-tools/arm-unknown-linux-gnueabi/bin/arm-unknown-linux-gnueabi-' --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree --enable-libaacplus --extra-cflags="-I/opt/ffmpeg/include" --extra-ldflags="-L/opt/ffmpeg/lib" --extra-libs=-ldl --prefix=/opt/ffmpeg
 RUN ct-ng-env make
 RUN ct-ng-env make install
+
+WORKDIR /opt/ffmpeg
