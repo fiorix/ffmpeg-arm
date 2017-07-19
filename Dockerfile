@@ -14,8 +14,8 @@ RUN ct-ng-env ./autogen.sh --with-parameter-expansion-string-replace-capable-she
 RUN ct-ng-env make
 RUN ct-ng-env make install
 
-RUN curl -s http://mirrors.zerg.biz/alsa/lib/alsa-lib-1.0.25.tar.bz2 | tar -jx -C /usr/src
-WORKDIR /usr/src/alsa-lib-1.0.25
+RUN curl -s ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.4.1.tar.bz2 | tar -jx -C /usr/src
+WORKDIR /usr/src/alsa-lib-1.1.4.1
 RUN ct-ng-env ./configure --host=arm-unknown-linux-gnueabi --prefix=/opt/ffmpeg
 RUN ct-ng-env make
 RUN ct-ng-env make install
